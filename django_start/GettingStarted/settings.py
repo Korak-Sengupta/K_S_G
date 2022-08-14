@@ -76,11 +76,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'GettingStarted.wsgi.application'
 
 
-STATIC_URL = '/static/'
+STATIC_URL = '/templates/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'templates'),
 )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
 
 
 # Database
