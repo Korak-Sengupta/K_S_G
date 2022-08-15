@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from django.contrib.messages import constants as messages
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-tr+p!tqh-bqn#7khsbm+2a)49)yl#019kuk@9w*w(s!*kn^f3+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','djangomoment.herokuapp.com']
 
 
 # Application definition
@@ -40,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -70,6 +74,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'GettingStarted.wsgi.application'
+
+
+STATIC_URL = '/templates/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates')
 
 
 # Database
